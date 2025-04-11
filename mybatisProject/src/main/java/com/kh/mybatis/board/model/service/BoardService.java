@@ -21,4 +21,6 @@ public interface BoardService {
 	
 	//게시글 검색
 	int selectSearchCount(HashMap<String, String> map);
+	//진짜검색
+	ArrayList<Board> selectSearchList(HashMap<String, String> map, PageInfo pi);
 }

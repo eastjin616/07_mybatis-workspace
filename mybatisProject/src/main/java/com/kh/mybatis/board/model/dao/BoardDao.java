@@ -60,4 +60,18 @@ public class BoardDao {
 	public int selectSearchCount(SqlSession sqlSession,HashMap<String, String> map) {
 		return sqlSession.selectOne("boardMapper.selectSearchCount", map);
 	}
+//============================검색기능2====================================================
+	
+	public ArrayList<Board> selectSearchList(SqlSession sqlSession,HashMap<String, String> map, PageInfo pi){
+		
+		int offset = (pi.getCurrentPage() - 1) * pi.getBoardLimit();
+		int limit = pi.getBoardLimit(); // 하나 누르면 몇개씩 보여줄까
+		
+		RowBounds rowBounds = new RowBounds(offset, limit);
+		
+		return (ArrayList)sqlSession.selectList("boardMapper.selectSearchList", map, rowBounds); 
+		
+		//키워드, 컨디션을 맵에 담아와여 여기에 넣을수 있다 왜
+	}
+
 }

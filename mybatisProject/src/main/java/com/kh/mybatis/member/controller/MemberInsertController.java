@@ -30,7 +30,7 @@ public class MemberInsertController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		request.setCharacterEncoding("utf-8"); //한글있을수 있으니까 인코딩
+//		request.setCharacterEncoding("utf-8"); //한글있을수 있으니까 인코딩
 		
 		String userId = request.getParameter("userId");
 		String userPwd = request.getParameter("userPwd");
